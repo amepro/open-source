@@ -30,6 +30,9 @@
     },
     "demos": {
       "tags": []
+    },
+    "schematics-stylus2sass": {
+      "tags": ["schematics"]
     }
   }
 }

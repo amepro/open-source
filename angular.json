@@ -22,6 +22,9 @@
     "@schematics/angular:component": {
       "style": "styl",
       "changeDetection": "OnPush"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
     }
   },
   "projects": {
@@ -259,6 +262,43 @@
               "libs/demos/src/**/*.ts",
               "libs/demos/src/**/*.html"
             ]
+          }
+        }
+      }
+    },
+    "schematics-stylus2sass": {
+      "projectType": "library",
+      "root": "libs/schematics/stylus2sass",
+      "sourceRoot": "libs/schematics/stylus2sass/src",
+      "prefix": "myndpm",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/schematics/stylus2sass/tsconfig.lib.json",
+            "project": "libs/schematics/stylus2sass/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/schematics/stylus2sass/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/schematics/stylus2sass/src/**/*.ts",
+              "libs/schematics/stylus2sass/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/schematics/stylus2sass"],
+          "options": {
+            "jestConfig": "libs/schematics/stylus2sass/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

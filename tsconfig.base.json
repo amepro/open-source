@@ -24,7 +24,8 @@
       "@myndpm/dyn-forms/logger": ["libs/forms/logger"],
       "@myndpm/dyn-forms/core": ["libs/forms/core"],
       "@myndpm/dyn-forms/ui-material": ["libs/forms/ui-material"],
-      "@myndpm/dyn-forms/ui-native": ["libs/forms/ui-native"]
+      "@myndpm/dyn-forms/ui-native": ["libs/forms/ui-native"],
+      "@myndpm/stylus2sass": ["libs/schematics/stylus2sass/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
